@@ -9,7 +9,8 @@ import java.util.Date;
 
 /**
  * The simplest implementation of {@link ServerEndpoint} for server socket implementation. Not all method are needed to
- * be implemented. It can only implemented method with {@link OnMessage}.
+ * be implemented. It can only implemented method with {@link OnMessage}. Endpoint under which it will be visible is
+ * defined by {@link ServerEndpoint#value()}.
  *
  * @see ServerEndpoint
  */
