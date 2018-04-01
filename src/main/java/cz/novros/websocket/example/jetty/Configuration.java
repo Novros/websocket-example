@@ -6,4 +6,5 @@ public class Configuration {
 	public static final String IP_ADDRESS = "127.0.0.1";
 	public static final String SIMPLE_ENDPOINT = "/message";
 	public static final String ENTITY_ENDPOINT = "/object";
+	public static final String REACTIVE_ENDPOINT = "/reactive";
 }
