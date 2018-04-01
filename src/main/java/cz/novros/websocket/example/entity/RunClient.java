@@ -12,24 +12,24 @@ import java.net.URI;
 
 public class RunClient {
 
-    public static void main(String[] args) throws Exception {
-        // Set up client socket to connect
-        final String uri = "ws://" + Configuration.IP_ADDRESS + ":" + Configuration.PORT + Configuration.ENTITY_ENDPOINT;
-        final WebSocketContainer container = ContainerProvider.getWebSocketContainer();
+	public static void main(String[] args) throws Exception {
+		// Set up client socket to connect
+		final String uri = "ws://" + Configuration.IP_ADDRESS + ":" + Configuration.PORT + Configuration.ENTITY_ENDPOINT;
+		final WebSocketContainer container = ContainerProvider.getWebSocketContainer();
 
-        // Connect client socket to server socket
-        final Session session = container.connectToServer(EntityClientSocket.class, URI.create(uri));
+		// Connect client socket to server socket
+		final Session session = container.connectToServer(EntityClientSocket.class, URI.create(uri));
 
-        // Send data to server socket
-        session.getBasicRemote().sendObject(new Entity("test", 9));
+		// Send data to server socket
+		session.getBasicRemote().sendObject(new Entity("test", 9));
 
-        // Wait for user to end.
-        System.in.read();
+		// Wait for user to end.
+		System.in.read();
 
-        // Clean up
-        session.close();
-        if (container instanceof LifeCycle) {
-            ((LifeCycle) container).stop();
-        }
-    }
+		// Clean up
+		session.close();
+		if (container instanceof LifeCycle) {
+			((LifeCycle) container).stop();
+		}
+	}
 }

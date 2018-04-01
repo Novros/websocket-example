@@ -10,21 +10,21 @@ import java.net.InetSocketAddress;
 
 public class RunServer {
 
-    public static void main(String[] args) throws Exception {
-        // Create jetty server
-        final Server server = new Server(new InetSocketAddress(Configuration.IP_ADDRESS, Configuration.PORT));
+	public static void main(String[] args) throws Exception {
+		// Create jetty server
+		final Server server = new Server(new InetSocketAddress(Configuration.IP_ADDRESS, Configuration.PORT));
 
-        // Prepare context for container
-        final ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
-        context.setContextPath("/");
-        server.setHandler(context);
+		// Prepare context for container
+		final ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
+		context.setContextPath("/");
+		server.setHandler(context);
 
-        // Create server socket
-        final ServerContainer webSocketContainer = WebSocketServerContainerInitializer.configureContext(context);
-        webSocketContainer.addEndpoint(EntityServerSocket.class);
+		// Create server socket
+		final ServerContainer webSocketContainer = WebSocketServerContainerInitializer.configureContext(context);
+		webSocketContainer.addEndpoint(EntityServerSocket.class);
 
-        // Run jetty server
-        server.start();
-        server.join();
-    }
+		// Run jetty server
+		server.start();
+		server.join();
+	}
 }

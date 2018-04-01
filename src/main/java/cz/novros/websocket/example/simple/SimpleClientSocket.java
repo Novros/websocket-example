@@ -11,14 +11,15 @@ import javax.websocket.OnMessage;
 @ClientEndpoint
 public class SimpleClientSocket {
 
-    /**
-     * Will receive message, which defined by {@link OnMessage}, from {@link javax.websocket.server.ServerEndpoint} (server socket).
-     *
-     * @see OnMessage
-     */
-    @OnMessage
-    public void onMessage(final String message) {
-        System.out.println("On message: " + message);
-    }
+	/**
+	 * Will receive message, which defined by {@link OnMessage}, from {@link javax.websocket.server.ServerEndpoint}
+	 * (server socket).
+	 *
+	 * @see OnMessage
+	 */
+	@OnMessage
+	public void onMessage(final String message) {
+		System.out.println("On message: " + message);
+	}
 
 }

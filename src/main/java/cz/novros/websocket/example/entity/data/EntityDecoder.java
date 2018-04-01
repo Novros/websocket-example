@@ -13,21 +13,21 @@ import javax.websocket.EndpointConfig;
  */
 public class EntityDecoder implements Decoder.Text<Entity> {
 
-    private static final Gson gson = new Gson();
+	private static final Gson gson = new Gson();
 
-    public Entity decode(String s) throws DecodeException {
-        return gson.fromJson(s, Entity.class);
-    }
+	public Entity decode(String s) throws DecodeException {
+		return gson.fromJson(s, Entity.class);
+	}
 
-    public boolean willDecode(String s) {
-        return false;
-    }
+	public boolean willDecode(String s) {
+		return false;
+	}
 
-    public void init(EndpointConfig endpointConfig) {
+	public void init(EndpointConfig endpointConfig) {
 
-    }
+	}
 
-    public void destroy() {
+	public void destroy() {
 
-    }
+	}
 }

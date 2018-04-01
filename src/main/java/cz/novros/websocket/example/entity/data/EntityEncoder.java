@@ -13,15 +13,15 @@ import javax.websocket.EndpointConfig;
  */
 public class EntityEncoder implements Encoder.Text<Entity> {
 
-    private static Gson gson = new Gson();
+	private static Gson gson = new Gson();
 
-    public String encode(Entity entity) throws EncodeException {
-        return gson.toJson(entity);
-    }
+	public String encode(Entity entity) throws EncodeException {
+		return gson.toJson(entity);
+	}
 
-    public void init(EndpointConfig endpointConfig) {
-    }
+	public void init(EndpointConfig endpointConfig) {
+	}
 
-    public void destroy() {
-    }
+	public void destroy() {
+	}
 }
